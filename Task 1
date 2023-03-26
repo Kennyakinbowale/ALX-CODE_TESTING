@@ -1,0 +1,23 @@
+/**task 1
+int _printf(const char *format, ...);
+int main(){
+printf("%i\n%d\n", 6, -30); //existing printf
+_printf("id", 6 , -30);    //created printf
+return 0; 
+}
+int _printf(const char *format, ...){
+int i;
+int len;
+len = strlen(format);
+va_list arglist;
+va_start(arglist, format);
+for(i = 0; i < len; i++){
+    if (format[i] == 'd'){
+    printf("%d\n", va_arg(arglist, int));
+    }
+    else if(format[i] == 'i'){
+    printf("%i\n", va_arg(arglist, int));
+    }
+}
+va_end(arglist);
+}*/
