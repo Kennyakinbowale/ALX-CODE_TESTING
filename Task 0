@@ -1,0 +1,29 @@
+MY CODES FOR TASK 0
+/*Task 0*/
+/**void _printf(const char *format, ...);
+int main(){
+printf("%c%s%c%s%%\n", 'I', "love", 'u', "javascript");//existing printf//
+_printf("cscs%", 'I', "love", 'u', "javascript", '%');//created printf//
+return 0;
+}
+void _printf(const char *format, ...){
+int i;
+char *str = "";
+int num_args;
+num_args = strlen(format);
+va_list arglist;
+va_start(arglist, format);
+for(i = 0; i < num_args; i++){
+if (format[i] == 'c')
+printf("%c", va_arg(arglist, int));
+else if (format[i] == 's'){
+if (str == NULL)
+printf("nil");
+printf("%s", va_arg(arglist, char *));
+    }
+else if (format[i] == '%'){
+    printf("%c", va_arg(arglist, int));
+}
+}
+va_end(arglist);
+}*/
